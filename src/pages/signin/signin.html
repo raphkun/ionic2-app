@@ -1,0 +1,45 @@
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img class="logo" src="http://placehold.it/150x150"/>
+      <h1>Sign in</h1>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form (ngSubmit)="signIn()" #sigInForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="sigInCredentials.email"
+                         required autofocus="true"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="sigInCredentials.password"
+                         required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col width-67>
+          <button ion-button (click)="signInWithFacebook()" tabindex="-1">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-row padding-top>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn-outline" full type="submit" [disabled]="true">Sign up</button>
+        </ion-col>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!sigInForm.form.valid">Sign in</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-menu type="reveal" [content]="content" persistent="true">
+  <ion-content class="menu-content" padding>
+    <ion-row class="logo-row">
+      <ion-col></ion-col>
+      <ion-col width-66>
+        <img class="logo" src="http://placehold.it/150x150"/>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-list no-lines>
+      <button menuClose ion-item *ngFor="let p of pages" [disabled]="p.component == null" (click)="openPage(p)" class="menu-item" detail-none>
+        <ion-icon [name]="p.icon" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar>
+      <button menuClose class="logout item-center" (click)="logout()">
+        <ion-icon name="power"></ion-icon>
+      </button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

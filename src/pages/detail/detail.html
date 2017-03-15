@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{hero.name}} details!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-card *ngIf="hero">
+    <img src="{{hero.background}}"/>
+    <div class="card-title">{{hero.name}}</div>
+    <div class="card-subtitle">aka {{hero.alias}}</div>
+  </ion-card>
+  <hr/>
+  <p padding>{{hero.abilities}}</p>
+</ion-content>

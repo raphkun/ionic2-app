@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="chatroom">
+  <ion-list>
+    <ion-item *ngFor="let message of messages | async" [class.me]="message.author == currentUser">
+      <h6>{{message.author != currentUser ? message.author : ''}}</h6>
+      <p padding>{{message.message}}</p>
+      <h6>{{message.posted | date: 'medium'}}</h6>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer keyboard-attach>
+  <form #composeMessageForm="ngForm" (ngSubmit)="addMessage()" padding>
+    <div class="bar bar-header item-input-inset">
+      <input type="text" placeholder="Message..." [(ngModel)]="newMessage" name="message" required>
+      <button type="submit" [disabled]="!composeMessageForm.form.valid">Send</button>
+    </div>
+  </form>
+</ion-footer>

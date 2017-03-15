@@ -1,0 +1,28 @@
+menu {
+
+  img.logo {
+    border-radius: 50%;
+  }
+  .menu-content {
+    background-color: #EAEDF4;
+  }
+
+  .menu-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: normal;
+    background-color: transparent!important;
+  }
+
+  .item-center {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 95%;
+    height: 95%;
+    font-size: 20pt;
+    background: transparent;
+  }
+
+}

@@ -1,0 +1,41 @@
+chat-room-page {
+  .chatroom {
+    background-color: #EAEDF5;
+  }
+
+  ion-item.item {
+    background-color: transparent;
+    max-width: 90%;
+    color: #ABBAC8;
+
+    p {
+      background-color: #FFFFFF;
+      color: #1F2735;
+      white-space: normal;
+    }
+  }
+
+  ion-item.me {
+    float: right;
+
+    h6 {
+      float: right;
+    }
+  }
+
+  ion-footer {
+    background-color: #FFFFFF;
+
+    input {
+      border: none;
+    }
+
+    button {
+      color:#202836;
+      font-size: 1.1em;
+      font-weight: 500;
+      float: right;
+      background-color: transparent;
+    }
+  }
+}

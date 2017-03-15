@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="master-content">
+  <ion-refresher (ionRefresh)="getHeroes($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-card *ngFor="let hero of heroes" (click)="heroTapped($event, hero)">
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="{{hero.avatar}}">
+        </ion-avatar>
+        <h2>{{hero.name}}</h2>
+        <p>{{hero.id}}</p>
+      </ion-item>
+
+      <img src="{{hero.background}}" />
+
+      <ion-card-content>
+        <p>{{hero.alias}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
