@@ -1,6 +1,6 @@
 ionic2-app
 ==========
-Inspired by the ["Tour of Heroes"](http://localhost:8100/ionic-lab) Angular 2 tutorial.
+Inspired by the ["Tour of Heroes"](https://angular.io/docs/ts/latest/tutorial) Angular 2 tutorial.
 
 Launch the following commands in the project directory.
 
