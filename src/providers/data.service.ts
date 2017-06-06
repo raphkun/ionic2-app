@@ -13,18 +13,16 @@ export class DataService {
   constructor(public af: AngularFire) { }
 
   getHeroes(): Promise<Hero[]> {
-    return this.af.database
-      .list('heroes')
-      .map(data => {
-        let heroes: Hero[] = [];
-        data.forEach(function (item) {
-          heroes.push(Hero.decode(item))
+    return new Promise((resolve, reject) => {
+      this.af.database.list('heroes')
+        .subscribe(data => {
+            let heroes: Hero[] = [];
+            data.forEach(function (item) {
+              heroes.push(Hero.decode(item))
+            });
+            resolve(heroes);
         });
-        return heroes;
-      })
-      .first()
-      .toPromise()
-    ;
+    });
   }
 
   getMessages(): FirebaseListObservable<any[]> {
