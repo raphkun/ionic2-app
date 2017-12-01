@@ -1,4 +1,4 @@
-ionic2-app
+yoobic-ionic-app
 ==========
 Inspired by the ["Tour of Heroes"](https://angular.io/docs/ts/latest/tutorial) Angular 2 tutorial.
 
